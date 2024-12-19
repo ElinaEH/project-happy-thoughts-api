@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import listEndpoints from "list-endpoints-express";
 
 // Load environment variables from env. file
 dotenv.config();
@@ -51,7 +52,20 @@ app.use(express.json());
 
 // Start defining your routes here
 app.get("/", (req, res) => {
-  res.send("Hello Technigo!");
+  const endpoints = listEndpoints(app); // Automaticlly list all endpoints
+  res.json({
+    message: "Hello! Here are all the available endpoints:",
+    endpoints: endpoints
+  });
+});
+
+app.get("/thoughts", async (req, res) => {
+  try {
+    const thoughts = await Thought.find().sort({ createdAt: -1 }).limit(20);
+    res.status(200).json(thoughts);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  } 
 });
 
 // Start the server
