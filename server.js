@@ -2,7 +2,7 @@ import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import listEndpoints from "list-endpoints-express";
+import listEndpoints from "express-list-endpoints";
 
 // Load environment variables from env. file
 dotenv.config();
@@ -51,7 +51,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   const endpoints = listEndpoints(app); // Automatically list all endpoints
   res.json({
-    message: "Hello! Here are all the available endpoints:",
+    message: "Hello and welcome to Happy Thoughts! Here are all the available endpoints:",
     endpoints: endpoints
   });
 });

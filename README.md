@@ -1,13 +1,7 @@
 # Project Happy Thoughts API
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project is a Happy Thoughts Messaging API built with Express and MongoDB. It lets users create new thoughts, view the latest ones, and like a thought by adding hearts. I connected the project with my frontend Happy Thoughts project, enabling the API to handle requests and interact with the frontend.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This project uses Express for the backend API, MongoDB with Mongoose for data storage, and dotenv for environment variable management. CORS handles cross-origin requests, and list-endpoints-express lists available API routes.  I started with connecting the project to MongoDB Atlas and then built the required endpoints step by step. I made a small mistake when importing the express-list-endpoints, which caused my endpoints to appear incorrectly. After realizing the mistake, I was able to fix it and get the home route to display the endpoints in a structured order. 
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
