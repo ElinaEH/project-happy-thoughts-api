@@ -51,7 +51,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   const endpoints = listEndpoints(app); // Automatically list all endpoints
   res.json({
-    message: "Hello and welcome to Happy Thoughts! Here are all the available endpoints:",
+    message: "Hello and welcome to the Happy Thoughts API! Here are all the available endpoints:",
     endpoints: endpoints
   });
 });
