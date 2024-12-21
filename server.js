@@ -81,6 +81,7 @@ app.post("/thoughts", async (req, res) => {
     const thought = new Thought ({ message });
     const savedThought = await thought.save();
   
+    console.log("New thought saved:", savedThought);
     res.status(201).json(savedThought);
   } catch (error) {
     console.error("Error saving thought:", error);
